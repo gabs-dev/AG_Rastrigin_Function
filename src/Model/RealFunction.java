@@ -8,7 +8,7 @@ import java.util.Random;
 
 public abstract class RealFunction {
     double[] genes;
-    double mutationRate = 0.1;
+    double mutationRate = 0.15;
     int genesAmount;
     double evaluation;
     int recombineAlgorithm;
@@ -60,7 +60,7 @@ public abstract class RealFunction {
 
         for (int i = 0; i < this.genesAmount; i++) {
             double r = random.nextDouble();
-            if (r <= mutationRate) {
+            if (r < mutationRate) {
                 mutant.genes[i] = this.genes[i] + noise();
                 alteredGene = true;
             } else {
@@ -84,7 +84,7 @@ public abstract class RealFunction {
 
     private double noise() {
         Random random = new Random();
-        return (0.1 * random.nextGaussian());
+        return (random.nextGaussian());
     }
 
     public int getGenesAmount() {

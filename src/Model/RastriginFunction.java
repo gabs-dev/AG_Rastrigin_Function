@@ -1,7 +1,5 @@
 package Model;
 
-import java.text.DecimalFormat;
-import java.util.List;
 import java.util.Random;
 
 public class RastriginFunction extends RealFunction {
@@ -25,7 +23,7 @@ public class RastriginFunction extends RealFunction {
                 double xi = this.genes[i];
                 sum += Math.pow(xi, 2) - 10 * Math.cos(2 * Math.PI * xi);
             }
-            this.evaluation = 10 * d + sum;
+            this.evaluation = (10 * d) + sum;
             this.evaluated = true;
         }
 
